@@ -1,5 +1,7 @@
 # SimpleRPG Entity Template Maker
 
+![Software Screenshot](docs/screenshot.png)
+
 This project started as a personal challenge to rewrite an old Visual Basic 6 application that I had written in 2007 for defining SimpleRPG entity templates.
 
 > SimpleRPG was the _codename_ for an RPG game engine that I developed in 2007 which became extended and revamped into a full game a few months later.
