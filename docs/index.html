@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleRPG Entity Template Maker - Richard Marks 6/12/2020</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="window window--with-menu main-window window--inactive">
+    <div class="window-title-bar">
+      <div class="window-title-bar_icon"></div>
+      <div class="window-title-bar_caption">SimpleRPG Entity Template Maker - Richard Marks 6/12/2020</div>
+      <div class="window-title-bar-buttons">
+        <div class="window-title-bar-button window-title-bar-button--minimize">_</div>
+        <div class="window-title-bar-button window-title-bar-button--maximize">&#x2610;</div>
+        <div class="window-title-bar-button window-title-bar-button--close">&times;</div>
+      </div>
+    </div>
+
+    <nav class="window-menu-bar">
+      <ul class="menu">
+        <li class="menu-item" id="mnuFileHk">
+          <input class="check" type="checkbox" id="mnuFile" />
+          <label class="menu-item-caption" for="mnuFile">File</label>
+          <ul class="menu">
+            <li class="menu-item" id="mnuFileNew"><a href="javascript:void(0);" class="menu-item-caption">New</a><span>&#x2318;+N</span></li>
+            <li class="menu-item menu-item-separator"></li>
+            <li class="menu-item" id="mnuFileSave"><a href="javascript:void(0);" class="menu-item-caption">Save</a><span>&#x2318;+S</span></li>
+          </ul>
+        </li>
+        <li class="menu-item" id="mnuHelpHk">
+          <input class="check" type="checkbox" id="mnuHelp" />
+          <label class="menu-item-caption" for="mnuHelp">Help</label>
+          <ul class="menu">
+            <li class="menu-item" id="mnuHelpAbout"><a href="javascript:void(0);" class="menu-item-caption">About&hellip;</a><span>F1</span></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="window-content">
+
+      <section class="group entity-definition-group vexpand">
+        <div class="group-content">
+          <header class="group-header">Entity Definition</header>
+
+          <div class="row vexpand">
+            <div class="column group-stack">
+              <div class="row vexpand">
+                <div class="column">
+                  <div class="labeled-input">
+                    <label for="strAlias" class="label label--align-right">Alias:</label>
+                    <input placeholder="Enter an alias" id="strAlias" name="strAlias" class="input" />
+                  </div>
+
+                  <div class="labeled-input">
+                    <label for="strClass" class="label label--align-right">Class:</label>
+                    <input placeholder="Enter Base Class" id="strClass" name="strClass" class="input" />
+                  </div>
+                </div>
+              </div>
+
+
+              <section class="group">
+                <div class="group-content">
+                  <header class="group-header">Base Attributes</header>
+
+                  <div class="row">
+                    <div class="column" style="margin-left: 16px;">
+                      <div class="labeled-input">
+                        <label for="strMaxHP" class="label label--align-right">Max HP:</label>
+                        <input id="strMaxHP" name="strMaxHP" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strMaxMP" class="label label--align-right">Max MP:</label>
+                        <input id="strMaxMP" name="strMaxMP" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strVIT" class="label label--align-right">VIT:</label>
+                        <input id="strVIT" name="strVIT" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strMAA" class="label label--align-right">MAA:</label>
+                        <input id="strMAA" name="strMAA" class="input input--align-right" />
+                      </div>
+                    </div>
+
+                    <div class="column">
+                      <div class="labeled-input">
+                        <label for="strSTR" class="label label--align-right">STR:</label>
+                        <input id="strSTR" name="strSTR" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strPHD" class="label label--align-right">PHD:</label>
+                        <input id="strPHD" name="strPHD" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strPHA" class="label label--align-right">PHA:</label>
+                        <input id="strPHA" name="strPHA" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strMAD" class="label label--align-right">MAD:</label>
+                        <input id="strMAD" name="strMAD" class="input input--align-right" />
+                      </div>
+                      <div class="labeled-input">
+                        <label for="strBaseLevel" class="label label--align-right">Base Level:</label>
+                        <input id="strBaseLevel" name="strBaseLevel" class="input input--align-right" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="group">
+                <div class="group-content">
+                  <header class="group-header">Rewards</header>
+
+                  <div class="labeled-input">
+                    <label for="strExp" class="label label--align-right">Experience:</label>
+                    <input id="strExp" name="strExp" class="input input--align-right" />
+                  </div>
+                  <div class="labeled-input">
+                    <label for="strMoney" class="label label--align-right">Money:</label>
+                    <input id="strMoney" name="strMoney" class="input input--align-right" />
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            <div class="column group-stack">
+              <section class="group">
+                <div class="group-content">
+                  <header class="group-header">Skills</header>
+
+                  <div class="row vexpand">
+                    <div class="column">
+                      <div id="lstSkills" class="list-box scrollbar">
+
+                        <div class="list-box-item">Attack</div>
+                        <div class="list-box-item list-box-item--selected">Fierce Attack</div>
+                        <div class="list-box-item">Super Attack</div>
+
+                      </div>
+                    </div>
+                    <div>
+                      <button id="btnAddSkill" class="button">Add</button>
+                      <button id="btnRemoveSkill" class="button">Del</button>
+                      <button id="btnSkillsHelp" class="button">?</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="group">
+                <div class="group-content">
+                  <header class="group-header">Items &amp; Equipment</header>
+
+                  <div class="row vexpand">
+                    <div class="column">
+                      <div id="lstItems" class="list-box list-box--with-checkbox scrollbar">
+
+                        <div class="list-box-item list-box-item--selected">
+                          <input name="cb" class="list-box-item_checkbox" type="checkbox" checked />
+                          <label for="cb" class="list-box-item_text">
+                            Silver Sword
+                          </label>
+                        </div>
+                        <div class="list-box-item">Greaves</div>
+                        <div class="list-box-item">Bandage</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+                        <div class="list-box-item">Rock</div>
+
+                      </div>
+                    </div>
+                    <div>
+                      <button id="btnAddItem" class="button">Add</button>
+                      <button id="btnRemoveItem" class="button">Del</button>
+                      <button id="btnItemsHelp" class="button">?</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <div class="modal-overlay" id="OS_MODAL_OVERLAY">
+    <div class="modal-content">
+
+      <div class="window input-box-window" id="OS_INPUT_BOX_WINDOW">
+        <div class="window-title-bar">
+          <div class="window-title-bar_caption" id="OS_INPUT_BOX_TITLE">InputBox Title</div>
+          <div class="window-title-bar-buttons">
+            <div class="window-title-bar-button window-title-bar-button--close" id="OS_INPUT_BOX_CLOSE_BUTTON">&times;</div>
+          </div>
+        </div>
+
+        <main class="window-content input-box-content">
+
+          <div class="row">
+            <div class="column vexpand" id="OS_INPUT_BOX_TEXT">
+              InputBox Text
+            </div>
+            <div>
+              <button id="OS_INPUT_BOX_OK_BUTTON" class="button">OK</button>
+              <button id="OS_INPUT_BOX_CANCEL_BUTTON" class="button">Cancel</button>
+            </div>
+          </div>
+
+          <input id="OS_INPUT_BOX_INPUT" class="input" value="InputBox Value" />
+
+        </main>
+      </div>
+
+      <div class="window msg-box-window" id="OS_MSG_BOX_WINDOW">
+        <div class="window-title-bar">
+          <div class="window-title-bar_caption" id="OS_MSG_BOX_TITLE">MsgBox Title</div>
+          <div class="window-title-bar-buttons">
+            <div class="window-title-bar-button window-title-bar-button--close" id="OS_MSG_BOX_CLOSE_BUTTON">&times;</div>
+          </div>
+        </div>
+
+        <main class="window-content msg-box-content">
+          <div class="msg-box-text" id="OS_MSG_BOX_TEXT">
+            MsgBox Text<br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, necessitatibus.
+          </div>
+          <div class="default-button">
+            <button id="OS_MSG_BOX_OK_BUTTON" class="button">OK</button>
+          </div>
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
